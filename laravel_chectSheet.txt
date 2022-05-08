@@ -153,4 +153,5 @@ $re->name='kush';
 $re->save();
 
 
-
+49. check doc file is avalible or not
+$request->hasfile('image')
