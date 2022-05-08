@@ -1,0 +1,156 @@
+**Laravel Commends**
+1.create a new project
+->composer create-project laravel/laravel Applicashion_name
+2.run project
+->php artisan serve
+3.Clear cache
+->php artisan cache:clear
+->php artisan view:clear
+4.give Sorage link in applicashion
+->php artisan storage:link
+5.migrate table
+->php artisan migrate
+6.Create model and controller with CRUD methods
+->php artisan make:model Name -mcr
+7.change the port number of applicashion
+->php artisan serve --port=1000
+8.call view
+->Route::view('view_name','view_name')
+->Route::get('/first',function (){
+	return view('first');
+});
+9.call view and pass value
+->Route::get('/first/{id}',function (){
+	return view('first');
+});
+10.Create new controller
+->php artisan make:controller user
+11.controller to call view
+->return view('view_name')
+12.controller to call view and pass data
+->return view('view_name',array('id'=>1));
+13.Write a varyable in html use 
+{{ id }}
+14.in form tocke is important
+->@csrf
+15.if .. else
+->@if(condishion)
+->@else
+->@endif
+16.for
+->@for($i=0;$i<=5;$i++)
+
+->@endfor
+17.Foreach
+->@foreach($data as $list)
+	{{$list}}
+->@endforeach
+
+18.Extend the other page
+->@extends('file_name')
+19.Daynamic title 
+<title>@yield('title')</title>
+20.set the title
+@section('title','Title')
+21.mulitiple data content fach(Create dayanamic conaten)
+->@section('contaner')
+->all data will pass here
+->@endsection
+22.get and show data of fetch data
+->@sectio('container')
+->@show
+23.Create a middleware
+->php artisan make:middleware name
+24.validashion
+->$request->validate([
+	'filed name'=>"required|min:3|max:10,
+	'filed name'=>'required',
+	'file'=>'required|mimes:jpeg.png'
+])
+	
+25.Print the validashion error in html
+@error('filed_name')
+	{{$message}}
+@enderror
+
+26.upload image
+$request->file('file_name')->store('folder_name');
+
+27. set session 
+$r->session()->put('name','value')
+
+28. get session value
+$r->session()->get('name')
+
+29. remove session
+$r->session()->forget('name');
+
+30. check the session is avalible or not
+	if($r->session()->has('name')){
+		True
+	}else{
+		False
+	}
+31. print session flash
+{{ session('name') }}
+
+32. set the session flash data
+->$r->session->flash('error_name','message');
+
+33. use database other wayas 
+->use Illuminate/Support/Facades\DB;
+
+34. selete all data from table
+->DB::table('table_name')->all();
+
+35. selete all data from table with condishion
+->DB::table('table_name')->where('id',1)->get();
+
+36. check where data is exists or not
+->exists()
+
+37. check that data was not exists in database
+->doesntExist()
+
+38. only want one data 
+->DB::table('user')->select('id',1)->get();
+
+39. Write query in laravel
+->DB::select(DB::raw('select * from user '));
+
+40. if you want to fetch data with order
+->DB::table('user')->orderBy('id','desc')->get();
+
+41. insert data
+->DB:: table('user')->insert(array('name'=>'kush','email'=>'juthanikush@gmail.com'));
+
+
+42. Update data
+->DB:: table('user')->where('id',1)->update(array('name'=>'kush','email'=>'juthanikush@gmail.com'));
+
+43. Delete data
+->DB:: table('user')->where('id',1)->delete();
+
+44. create a model
+->php artisan make:model model_name
+
+45. delete data 
+->$re=table_name::find(2);
+->$re->delete();
+
+46. delete mutlipale rows
+->table_name:destory(array(4,5));
+
+47. insert data
+->$re = new model_name;
+$re->id='1';
+$re->save();
+
+
+48. insert data
+->$re =table_name::find(1);
+$re->name='kush';
+$re->save();
+
+
+
