@@ -155,3 +155,11 @@ $re->save();
 
 49. check doc file is avalible or not
 $request->hasfile('image')
+
+
+50.encrpty the password
+->use Illuminate\Support\Facades\Hash;
+->Hash::make('field_valriable')
+
+51.check encrpty password is match or not
+->Hash::check('password_input_by_user','encrpty_password')
