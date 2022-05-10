@@ -163,3 +163,7 @@ $request->hasfile('image')
 
 51.check encrpty password is match or not
 ->Hash::check('password_input_by_user','encrpty_password')
+
+
+52.String validashion
+->['required', 'regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/']
