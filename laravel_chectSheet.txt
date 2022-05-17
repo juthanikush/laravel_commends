@@ -167,3 +167,6 @@ $request->hasfile('image')
 
 52.String validashion
 ->['required', 'regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/']
+
+53. it will give the last inserted id in table
+$p_id=DB::table('product')->insertGetId($arr);
