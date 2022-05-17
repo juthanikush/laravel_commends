@@ -170,3 +170,7 @@ $request->hasfile('image')
 
 53. it will give the last inserted id in table
 $p_id=DB::table('product')->insertGetId($arr);
+
+
+54. redirect the other url with parameters
+->return redirect()->route('pro_attr', ['id' => 1]);
